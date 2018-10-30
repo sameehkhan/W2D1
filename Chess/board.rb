@@ -32,7 +32,7 @@ class Board
 
   def move_piece(start_pos, end_pos)
     raise "No piece at this position!" if self[start_pos].is_a?(NullPiece)
-    raid "You cannot move there!" if self[end_pos].is_a?(Piece)
+    raise "You cannot move there!" if self[end_pos].is_a?(Piece)
   end
 
 end
@@ -59,5 +59,5 @@ if __FILE__ == $PROGRAM_NAME
   board = Board.new
   board.board_setup
   board.grid
-  p board.move_piece([2,3],[3,3])
+  p board.move_piece([0,0],[1,1])
 end
